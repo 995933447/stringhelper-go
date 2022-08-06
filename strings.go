@@ -35,6 +35,7 @@ func Camel(s string) string {
 		}
 		if j {
 			d = d - 32
+			j = false
 		}
 		data = append(data, d)
 	}
