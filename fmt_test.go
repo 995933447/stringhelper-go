@@ -5,5 +5,5 @@ import (
 )
 
 func TestCamel(t *testing.T) {
-	t.Log(Camel("a_bc_d"))
+	t.Log(Camel("Ab_cd_ef"))
 }
