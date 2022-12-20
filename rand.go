@@ -23,7 +23,7 @@ func GenRandomStr(length int64, mod uint32) string {
 		strKey = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	}
 
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	r := rand.New(rand.NewSource(time.Now().UnixNano() + int64(rand.Intn(1000))))
 	bytes := make([]byte, length)
 	for i := range bytes {
 		bytes[i] = strKey[r.Intn(len(strKey))]
