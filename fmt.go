@@ -3,7 +3,7 @@ package stringhelper
 import "strings"
 
 func Snake(s string) string {
-	data := make([]byte, 0, len(s) * 2)
+	data := make([]byte, 0, len(s)*2)
 	var j bool
 	num := len(s)
 	for i := 0; i < num; i++ {
@@ -40,4 +40,16 @@ func Camel(s string) string {
 		data = append(data, d)
 	}
 	return string(data)
+}
+
+func LowerFirstASCII(s string) string {
+	if s == "" {
+		return s
+	}
+	b := s[0]
+	if 'A' <= b && b <= 'Z' {
+		// 小写化：大写字母和小写字母的差值是 32
+		return string(b+('a'-'A')) + s[1:]
+	}
+	return s
 }
