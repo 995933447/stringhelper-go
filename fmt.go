@@ -53,3 +53,14 @@ func LowerFirstASCII(s string) string {
 	}
 	return s
 }
+
+func UpperFirstASCII(s string) string {
+	if s == "" {
+		return s
+	}
+	b := s[0]
+	if 'a' <= b && b <= 'z' {
+		return string(b-('a'-'A')) + s[1:]
+	}
+	return s
+}
