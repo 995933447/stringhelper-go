@@ -64,3 +64,17 @@ func UpperFirstASCII(s string) string {
 	}
 	return s
 }
+
+func FindAllSubstringIdx(s, sub string) []int {
+	var indices []int
+	index := 0
+	for {
+		foundIndex := strings.Index(s[index:], sub)
+		if foundIndex == -1 {
+			break
+		}
+		indices = append(indices, index+foundIndex)
+		index += foundIndex + 1
+	}
+	return indices
+}
